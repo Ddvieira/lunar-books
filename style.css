@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #100d0d;
     color: #f1e8df;
@@ -15,21 +19,18 @@ body {
     line-height: 1.6;
 }
 
+
 /* =========================
    CABEÇALHO
 ========================= */
 
 header {
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 25px 8%;
-
     background-color: #0b0909;
     border-bottom: 1px solid #3a2525;
-
     position: sticky;
     top: 0;
     z-index: 999;
@@ -58,20 +59,18 @@ nav a:hover {
     color: #b5121b;
 }
 
+
 /* =========================
    HERO / INÍCIO
 ========================= */
 
 #inicio {
     min-height: 75vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     padding: 80px 20px;
 
     background:
@@ -83,35 +82,26 @@ nav a:hover {
 
 #inicio h2 {
     max-width: 800px;
-
     font-size: 58px;
     line-height: 1.1;
-
     color: #f4e9df;
-
     margin-bottom: 25px;
 }
 
 #inicio p {
     font-size: 19px;
     color: #b9aaa0;
-
     margin-bottom: 35px;
 }
 
 #inicio button {
     background-color: #a80f18;
     color: #ffffff;
-
     border: none;
-
     padding: 14px 30px;
-
     font-family: inherit;
     font-size: 16px;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
@@ -119,6 +109,7 @@ nav a:hover {
     background-color: #d01822;
     transform: translateY(-2px);
 }
+
 
 /* =========================
    LIVROS
@@ -131,378 +122,155 @@ nav a:hover {
 
 #livros h2 {
     text-align: center;
-
     font-size: 36px;
-
     margin-bottom: 50px;
-
     color: #f1e8df;
 }
 
 .livros-container {
     display: flex;
-
     justify-content: center;
-
     gap: 30px;
-
     flex-wrap: wrap;
 }
 
 .livro {
     width: 280px;
-
     background-color: #211818;
-
     border: 1px solid #402828;
-
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-
     overflow: hidden;
-
     transition: 0.3s;
-
     position: relative;
 }
 
+.livro:hover {
+    transform: translateY(-8px);
+    border-color: #9e151d;
+}
+
+
+/* CAPA DO LIVRO */
+
 .capa {
     height: 350px;
-
     padding: 25px;
-
     display: flex;
     align-items: flex-end;
-
     background:
         linear-gradient(
             145deg,
             #351b1b,
             #120c0c
         );
-
     position: relative;
 }
 
 .capa::before {
     content: "";
-
     position: absolute;
-
     inset: 12px;
-
     border: 1px solid #704040;
-
     pointer-events: none;
 }
 
 .capa-conteudo {
     position: relative;
-
     z-index: 1;
-
     width: 100%;
-
     text-align: center;
 }
 
 .capa-conteudo span {
     display: block;
-
     font-size: 11px;
-
     letter-spacing: 3px;
-
     color: #c7aaa0;
-
     margin-bottom: 60px;
 }
 
 .capa-conteudo h3 {
     font-size: 28px;
-
     line-height: 1.1;
-
     color: #f3e6dc;
-
     margin-bottom: 20px;
 }
 
 .capa-conteudo small {
     color: #a58f87;
-
     font-size: 12px;
 }
 
-.detalhes-btn {
-    padding: 10px 15px;
 
-    background-color: transparent;
-
-    border: 1px solid #704040;
-
-    color: #e8ddd4;
-
-    font-family: inherit;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.detalhes-btn:hover {
-    background-color: #a80f18;
-
-    border-color: #a80f18;
-
-    color: white;
-}
-
-.favorito-btn {
-    position: absolute;
-
-    right: 20px;
-    bottom: 20px;
-
-    width: auto;
-
-    padding: 0;
-
-    background: none;
-
-    border: none;
-
-    color: #a58f87;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.favorito-btn:hover {
-    color: #b5121b;
-
-    transform: scale(1.15);
-}
-
-.favorito-btn.favoritado {
-    color: #d01822;
-}
-
-.favoritado {
-    color: #d01822;
-}
-
-.favorito-btn {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-
-    background: none;
-    border: none;
-
-    color: #a58f87;
-    font-family: Arial, sans-serif;
-    font-size: 25px;
-
-    cursor: pointer;
-    width: auto;
-    padding: 0;
-}
-
-.favorito-btn:hover {
-    color: #b5121b;
-    transform: scale(1.15);
-}
-
-.favorito-btn.favoritado {
-    color: #d01822;
-}
+/* INFORMAÇÕES DO LIVRO */
 
 .livro-info {
     padding: 20px;
-
     position: relative;
 }
 
 .livro-info h3 {
     color: #f2e7dd;
-
     font-size: 19px;
-
     margin-bottom: 5px;
 }
 
 .livro-info p {
     color: #b5121b;
-
     font-size: 14px;
-
     margin-bottom: 15px;
 }
 
-.livro:hover {
-    transform: translateY(-8px);
 
-    border-color: #9e151d;
-}
-
-.livro h3 {
-    font-size: 25px;
-
-    color: #f2e7dd;
-
-    margin-bottom: 10px;
-}
-
-.livro p {
-    color: #b5121b;
-
-    font-size: 15px;
-
-    margin-bottom: 20px;
-}
+/* BOTÃO DE DETALHES */
 
 .detalhes-btn {
     padding: 10px 15px;
-
     background-color: transparent;
-
     border: 1px solid #704040;
-
     color: #e8ddd4;
-
     font-family: inherit;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
 .detalhes-btn:hover {
     background-color: #a80f18;
-
     border-color: #a80f18;
-
-    color: white;
+    color: #ffffff;
 }
 
-/* =========================
-   CATEGORIAS
-========================= */
 
-#categorias {
-    padding: 80px 8%;
+/* BOTÃO DE FAVORITO */
 
-    text-align: center;
-
-    background-color: #100d0d;
-}
-
-#categorias h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.categorias-botoes {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.categoria-btn {
-    padding: 10px 20px;
-
-    background-color: transparent;
-    border: 1px solid #563333;
-
-    color: #d7c8be;
-
-    font-family: inherit;
+.favorito-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #a58f87;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
     cursor: pointer;
-
     transition: 0.3s;
 }
 
-.categoria-btn:hover {
-    background-color: #a80f18;
-    border-color: #a80f18;
-    color: white;
+.favorito-btn:hover {
+    color: #b5121b;
+    transform: scale(1.15);
 }
 
-.categoria-btn.ativo {
-    background-color: #a80f18;
-    border-color: #a80f18;
-    color: white;
+.favorito-btn.favoritado {
+    color: #d01822;
 }
 
-.modal-informacoes {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-    padding: 15px 0;
-    border-top: 1px solid #402828;
-    border-bottom: 1px solid #402828;
-}
-
-.modal-informacoes p {
-    margin: 0;
-    color: #b9aaa0;
-    font-size: 14px;
-}
-
-.modal-informacoes strong {
-    color: #e8ddd4;
-}
 
 /* =========================
-   RODAPÉ
+   PESQUISA
 ========================= */
-
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    background-color: #090707;
-
-    border-top: 1px solid #3a2525;
-
-    color: #83756e;
-
-    font-size: 14px;
-}
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
-#estante {
-    padding: 90px 8%;
-    background-color: #151010;
-    text-align: center;
-}
-
-#estante h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #f1e8df;
-}
-
-.estante-vazia {
-    color: #a58f87;
-    margin-bottom: 30px;
-}
-
-.estante-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
 
 .pesquisa-container {
     display: flex;
@@ -530,6 +298,179 @@ footer {
     border-color: #a80f18;
 }
 
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+#categorias {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #100d0d;
+}
+
+#categorias h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.categorias-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.categoria-btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #563333;
+    color: #d7c8be;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categoria-btn:hover {
+    background-color: #a80f18;
+    border-color: #a80f18;
+    color: #ffffff;
+}
+
+.categoria-btn.ativo {
+    background-color: #a80f18;
+    border-color: #a80f18;
+    color: #ffffff;
+}
+
+
+/* =========================
+   ESTANTE
+========================= */
+
+#estante {
+    padding: 90px 8%;
+    background-color: #151010;
+    text-align: center;
+}
+
+#estante h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f1e8df;
+}
+
+.estante-vazia {
+    color: #a58f87;
+    margin-bottom: 30px;
+}
+
+.estante-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal.aberta {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background-color: #211818;
+    border: 1px solid #704040;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.modal-conteudo h2 {
+    color: #f3e6dc;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.modal-conteudo p {
+    color: #b9aaa0;
+    margin-bottom: 15px;
+}
+
+#modal-categoria {
+    color: #b5121b;
+}
+
+.modal-informacoes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid #402828;
+    border-bottom: 1px solid #402828;
+}
+
+.modal-informacoes p {
+    margin: 0;
+    color: #b9aaa0;
+    font-size: 14px;
+}
+
+.modal-informacoes strong {
+    color: #e8ddd4;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #a58f87;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #d01822;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: #090707;
+    border-top: 1px solid #3a2525;
+    color: #83756e;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
 @media (max-width: 700px) {
 
     header {
@@ -549,74 +490,4 @@ footer {
         width: 100%;
         max-width: 350px;
     }
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-
-    background-color: rgba(0, 0, 0, 0.75);
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    z-index: 1000;
-}
-
-.modal.aberta {
-    display: flex;
-}
-
-.modal-conteudo {
-    position: relative;
-
-    width: 100%;
-    max-width: 500px;
-
-    padding: 40px;
-
-    background-color: #211818;
-    border: 1px solid #704040;
-
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-}
-
-.modal-conteudo h2 {
-    color: #f3e6dc;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.modal-conteudo p {
-    color: #b9aaa0;
-    margin-bottom: 15px;
-}
-
-#modal-categoria {
-    color: #b5121b;
-}
-
-.fechar-modal {
-    position: absolute;
-    top: 15px;
-    right: 18px;
-
-    background: none;
-    border: none;
-
-    color: #a58f87;
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-.fechar-modal:hover {
-    color: #d01822;
-}
-
-html {
-    scroll-behavior: smooth;
 }
